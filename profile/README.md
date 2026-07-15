@@ -159,6 +159,7 @@ Shapes are illustrative; exact schemas live in the [API reference](https://app.c
 | [connect-domain-for-agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies) | Managing client domains at fleet scale: ownership, white-label connection, drift monitoring, bulk operations. |
 | [awesome-custom-domains](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains) | The curated map of the whole space: managed services, DIY building blocks, protocols, and examples. |
 | [customdomain-mcp](https://github.com/ever-just/customdomain-mcp) | The hosted MCP server: config for Claude, Cursor, and ChatGPT. |
+| [custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks) | Our GitHub App: continuous DNS and TLS health checks for custom domains on GitHub Pages. |
 | custom-domains | The product itself: control plane, TLS-terminating edge, dashboard. Private. |
 
 ## Common questions
@@ -177,6 +178,12 @@ Yes. SPF, DKIM, DMARC, MX, and return-path records are written through the same 
 
 **Is there a free tier?**
 Yes, [pricing starts at $0](https://customdomain.ai/pricing) with the full product: widget, API, automatic TLS, monitoring, and the MCP server.
+
+---
+
+## Run a domain on GitHub Pages? Add our GitHub App
+
+**[Custom Domain Checks](https://github.com/apps/custom-domain-checks)** watches the custom domain on your GitHub Pages repositories and posts a **Domain health** check on every push: DNS resolution, CNAME or apex target correctness, domain verification (takeover protection), CAA compatibility, certificate expiry, and HTTPS enforcement. It opens a tracking issue the moment something breaks. Free, [open on GitHub](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks).
 
 ---
 
