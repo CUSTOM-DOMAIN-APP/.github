@@ -1,55 +1,189 @@
-# Custom Domain
+<h1 align="center">Custom Domain</h1>
 
-**Custom domains for SaaS, live in about 30 seconds when users authorize their DNS provider.**
+<p align="center"><strong>One-click custom domains for SaaS. Automatic DNS, domain verification, and SSL/TLS on your users' own domains.</strong></p>
 
-Custom Domain lets your users connect a domain they already own to your platform in one click. It detects the user's DNS provider, configures the records automatically, verifies domain ownership, and issues and renews TLS certificates, so your customers never copy DNS records by hand and your team never maintains registrar-specific help docs. This GitHub organization holds the product source, the public documentation, and educational guides for [customdomain.ai](https://customdomain.ai).
+<p align="center">
+  <a href="https://customdomain.ai">Website</a> ·
+  <a href="https://app.customdomain.ai/docs">Docs</a> ·
+  <a href="https://customdomain.ai/custom-domain-api">REST API</a> ·
+  <a href="https://customdomain.ai/mcp-server">MCP Server</a> ·
+  <a href="https://customdomain.ai/connect-domain-widget">Widget</a> ·
+  <a href="https://app.customdomain.ai/signup"><strong>Get started free</strong></a>
+</p>
 
-## The problem we work on
+<p align="center">
+  <a href="https://app.customdomain.ai/docs"><img alt="Docs" src="https://img.shields.io/badge/docs-app.customdomain.ai-1c1917?style=flat-square"></a>
+  <a href="https://customdomain.ai/mcp-server"><img alt="MCP server" src="https://img.shields.io/badge/MCP-mcp.customdomain.ai-1c1917?style=flat-square"></a>
+  <a href="https://trust.customdomain.ai"><img alt="Trust Center" src="https://img.shields.io/badge/trust-SOC%202%20·%20ISO%2027001%20·%20GDPR-1c1917?style=flat-square"></a>
+  <a href="https://customdomain.ai/pricing"><img alt="Pricing" src="https://img.shields.io/badge/pricing-from%20%240-1c1917?style=flat-square"></a>
+</p>
 
-Almost every platform that offers white-label sites, hosted storefronts, or branded apps hits the same wall: the moment a customer has to configure DNS by hand, many of them stall. The records themselves are simple. The problem is that every DNS provider has a different interface, and the person doing the setup is rarely the person who understands DNS. The Domain Connect Association's public knowledge base (CC0) describes this gap well: service providers know which records are needed but cannot touch the zone, DNS providers control the zone but do not know the service, and the user is left translating between the two.
+---
 
-Custom Domain closes that gap with a managed control plane and a reverse-proxy edge that terminates TLS with strict multi-tenant isolation:
+**Custom Domain** lets a platform's users connect a domain they already own in one click. It detects the user's DNS provider, writes the records automatically, verifies domain ownership (CNAME/TXT), and issues and renews TLS certificates at a managed edge. **63 DNS and registrar providers** are supported through one-click provider authorization, API tokens, or a guided manual flow with automatic verification; **25+ providers configure fully automatically**, and a domain connected through provider authorization is typically **live with HTTPS in about 30 seconds**.
 
-- **63 DNS and registrar providers.** One-click provider authorization, API token connections, or a guided manual flow with automatic verification. 25+ providers are configured fully automatically. Where a provider supports the Domain Connect protocol, an open standard from the Domain Connect Association, that is one of the paths one-click authorization uses.
-- **Live in about 30 seconds** when the user authorizes their provider.
-- **Automatic HTTPS.** Certificates issue before the domain goes live and renew without further DNS changes.
-- **Every surface you might integrate from:** an [embeddable connect widget and SDK](https://customdomain.ai/connect-domain-widget), a full [REST API](https://customdomain.ai/custom-domain-api) covering connections, DNS records, verification, TLS, monitoring, webhooks, and registrar search and purchase, plus a [hosted MCP server](https://customdomain.ai/mcp-server) so AI agents can do all of the above.
-- **Pricing starts at $0**, so you can wire it up before you commit.
+## See it work
 
-## Repositories in this organization
+The connect flow, run on a real domain: provider detected, records written, ownership verified, certificate issued.
 
-| Repository | What you'll find |
-| --- | --- |
-| `custom-domains` | The product itself: control plane, edge, and dashboard. Private. |
-| [`docs`](https://github.com/CUSTOM-DOMAIN-APP/docs) | The public product documentation, rendered at [app.customdomain.ai/docs](https://app.customdomain.ai/docs). |
-| [`connect-domain-for-website-builders`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders) | Guides for [site builders and hosting platforms](https://customdomain.ai/for/site-builders) shipping domain connection to thousands of non-technical users. |
-| [`connect-domain-for-email-platforms`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms) | Guides for email platforms: automated SPF, DKIM, and DMARC setup for customer sending domains. |
-| [`connect-domain-for-agencies`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies) | Guides for [agencies and white-label platforms](https://customdomain.ai/for/agencies-white-label) putting client sites on client domains. |
-| [`connect-domain-for-ai-agents`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents) | Guides for [AI agents](https://customdomain.ai/for/ai-agents) that search, buy, and connect domains over MCP. |
-| [`awesome-custom-domains`](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains) | A curated list of the whole custom-domain tooling space: managed services, DIY building blocks, protocols, examples. |
-| [`customdomain-mcp`](https://github.com/ever-just/customdomain-mcp) | The MCP server for Custom Domain, hosted at `mcp.customdomain.ai/mcp` (streamable HTTP, OAuth client credentials). |
+![The Custom Domain connect flow: a real domain going live in about 30 seconds](../assets/connect-flow-demo.gif)
 
-## Getting started
+<table>
+<tr>
+<td width="50%" align="center">
 
-1. **See it in context.** Start at [customdomain.ai](https://customdomain.ai), or with the plain-language guide to [how to set up a custom domain](https://customdomain.ai/guides/how-to-set-up-a-custom-domain).
-2. **Read the docs.** The [developer documentation](https://app.customdomain.ai/docs) covers the connect flow, API reference, widget SDK, webhooks, and MCP.
-3. **Connect a domain.** [Sign up](https://app.customdomain.ai/signup) and try the flow on your own domain.
-4. **Talk to us.** [Book a call](https://customdomain.ai/appointment) if you are evaluating for a platform with real volume.
+**Your user types their domain**
+
+<img src="../assets/app-connect-domain.jpg" alt="Connecting a custom domain in the Custom Domain dashboard" width="100%">
+
+</td>
+<td width="50%" align="center">
+
+**Live with HTTPS, seconds later**
+
+<img src="../assets/app-domain-live.jpg" alt="A connected custom domain serving HTTPS traffic" width="100%">
+
+</td>
+</tr>
+</table>
 
 ## Who this is for
 
-- **SaaS platforms** where every tenant wants `app.theirbrand.com` instead of `theirbrand.yourapp.com`. Start with [custom domains for SaaS](https://customdomain.ai/custom-domains-for-saas).
-- **Site builders** that need [one-click DNS setup](https://customdomain.ai/one-click-dns-setup) to work for users who have never opened a registrar dashboard.
-- **Agencies** running client sites under client domains without babysitting DNS changes.
-- **AI agents** provisioning domains end to end through the [MCP server](https://customdomain.ai/mcp-server).
+<table>
+<tr>
+<td align="center" width="25%">
 
-Still working out the basics? The glossary entry on [custom domain vs subdomain](https://customdomain.ai/glossary/custom-domain-vs-subdomain) is a good first stop.
+**🧱 Website builders**
 
-## About Custom Domain
+Your users publish sites and want their own domain on them.
 
-Custom Domain is the managed domain-connection platform at [customdomain.ai](https://customdomain.ai). We build and maintain every repository in this organization, including the educational guides, and we say so plainly: they teach the problem space first and link to our product where it is the natural answer.
+[connect-domain-for-website-builders](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders)
 
-- Website: [customdomain.ai](https://customdomain.ai)
-- Documentation: [app.customdomain.ai/docs](https://app.customdomain.ai/docs)
-- Sign up: [app.customdomain.ai/signup](https://app.customdomain.ai/signup)
-- MCP server: [github.com/ever-just/customdomain-mcp](https://github.com/ever-just/customdomain-mcp)
+</td>
+<td align="center" width="25%">
+
+**✉️ Email platforms**
+
+Sending domains with SPF, DKIM, and DMARC written automatically.
+
+[connect-domain-for-email-platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms)
+
+</td>
+<td align="center" width="25%">
+
+**🤖 AI agents**
+
+Agents that provision apps need real domains: search, buy, connect, over MCP or API.
+
+[connect-domain-for-ai-agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents)
+
+</td>
+<td align="center" width="25%">
+
+**🏢 Agencies**
+
+Client domains under your brand, without collecting registrar logins.
+
+[connect-domain-for-agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies)
+
+</td>
+</tr>
+</table>
+
+Also: **e-commerce platforms** (a storefront per merchant domain), **creator tools** (a domain per creator), and any **multi-tenant SaaS** where tenants deserve their own name in the address bar. Start at [custom domains for SaaS](https://customdomain.ai/custom-domains-for-saas).
+
+## 63 supported DNS and registrar providers
+
+One connect flow across the entire provider landscape: one-click authorization where providers support it, API tokens where they offer them, and a guided manual path with automatic verification everywhere else. No user ever hits a dead end.
+
+<a href="https://customdomain.ai/one-click-dns-setup"><img src="../assets/provider-logos.png" alt="The supported DNS and registrar providers wall on customdomain.ai" width="100%"></a>
+
+| Connection method | Providers | User effort | Typical time to live |
+|---|---|---|---|
+| One-click provider authorization | 25+ auto-configured | One click, no credentials shared | ~30 seconds |
+| API token | Included in the 63 | Paste one scoped token | Minutes |
+| Guided manual + automatic verification | Everything else | Copy 2 to 4 records | Minutes, cache-dependent |
+
+## For developers and AI agents
+
+> [!TIP]
+> **Coding agents:** point your MCP client at the hosted server and your agent can search, register, and connect domains end to end, with DNS, verification, and TLS handled.
+
+```bash
+claude mcp add --transport http customdomain https://mcp.customdomain.ai/mcp
+```
+
+```json
+{
+  "mcpServers": {
+    "customdomain": {
+      "type": "http",
+      "url": "https://mcp.customdomain.ai/mcp"
+    }
+  }
+}
+```
+
+<details>
+<summary><strong>Connect a domain via the REST API</strong></summary>
+
+<br>
+
+```bash
+# 1. Create a connection for your user's domain
+curl -X POST https://app.customdomain.ai/v1/connections \
+  -H "Authorization: Bearer $API_KEY" \
+  -d '{"domain": "app.customer.com", "application_id": "<app>"}'
+
+# 2. Start one-click provider authorization (fallbacks: token or guided manual)
+curl -X POST https://app.customdomain.ai/v1/connections/<ID>/oauth:start \
+  -H "Authorization: Bearer $API_KEY"
+
+# 3. Poll until live: records written, ownership verified, TLS issued
+curl https://app.customdomain.ai/v1/connections/<ID> \
+  -H "Authorization: Bearer $API_KEY"
+```
+
+Shapes are illustrative; exact schemas live in the [API reference](https://app.customdomain.ai/docs/api-reference). The API also covers DNS records, TLS lifecycle, monitoring, webhooks, and registrar search and purchase. Agent index: [llms.txt](https://app.customdomain.ai/docs/llms.txt).
+
+</details>
+
+## Repositories
+
+| Repository | What you'll find |
+|---|---|
+| [docs](https://github.com/CUSTOM-DOMAIN-APP/docs) | The product documentation source of truth, rendered at [app.customdomain.ai/docs](https://app.customdomain.ai/docs). Questions welcome in [Discussions](https://github.com/CUSTOM-DOMAIN-APP/docs/discussions). |
+| [connect-domain-for-website-builders](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders) | The complete guide to offering custom domains on a site builder: records, verification, TLS at tenant scale, connect-flow UX. |
+| [connect-domain-for-email-platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms) | Sending-domain onboarding: SPF, DKIM, DMARC, return-path, deliverability, and automating all of it. |
+| [connect-domain-for-ai-agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents) | Agents that ship websites need domains: the MCP server, the API flow, and agent-safe DNS security. |
+| [connect-domain-for-agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies) | Managing client domains at fleet scale: ownership, white-label connection, drift monitoring, bulk operations. |
+| [awesome-custom-domains](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains) | The curated map of the whole space: managed services, DIY building blocks, protocols, and examples. |
+| [customdomain-mcp](https://github.com/ever-just/customdomain-mcp) | The hosted MCP server: config for Claude, Cursor, and ChatGPT. |
+| custom-domains | The product itself: control plane, TLS-terminating edge, dashboard. Private. |
+
+## Common questions
+
+**How do I let my users connect their own domain?**
+Embed the [connect widget](https://customdomain.ai/connect-domain-widget) or call the [REST API](https://customdomain.ai/custom-domain-api). Custom Domain handles provider detection, DNS, ownership verification, certificates, and serving.
+
+**What is bring your own domain (BYOD)?**
+Letting each customer run your product on a domain they own, like `app.acme.com`, instead of a shared subdomain. [Full definition](https://customdomain.ai/glossary/bring-your-own-domain), and [custom domain vs subdomain](https://customdomain.ai/glossary/custom-domain-vs-subdomain) if you're weighing the tradeoffs.
+
+**How fast can a customer domain go live?**
+With one-click provider authorization, about 30 seconds from typing the domain to serving HTTPS. Guided manual setups depend on the customer applying records; verification is detected automatically once they do.
+
+**Does this work for email domains?**
+Yes. SPF, DKIM, DMARC, MX, and return-path records are written through the same connect flow. See [connect-domain-for-email-platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms).
+
+**Is there a free tier?**
+Yes, [pricing starts at $0](https://customdomain.ai/pricing) with the full product: widget, API, automatic TLS, monitoring, and the MCP server.
+
+---
+
+<p align="center">
+  <a href="https://app.customdomain.ai/signup"><strong>Connect your first domain free →</strong></a>
+</p>
+
+<p align="center">
+  <sub>Security posture, compliance frameworks, and sub-processors: <a href="https://trust.customdomain.ai">trust.customdomain.ai</a> · Questions: <a href="https://github.com/CUSTOM-DOMAIN-APP/docs/discussions">Discussions</a> · <a href="https://customdomain.ai/appointment">Book a call</a></sub>
+</p>
