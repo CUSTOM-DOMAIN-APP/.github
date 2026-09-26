@@ -1,10 +1,10 @@
-<h1 align="center">Custom Domain</h1>
+<h1 align="center">CustomDomain™</h1>
 
 <p align="center"><strong>One-click custom domains for SaaS. Automatic DNS, domain verification, and SSL/TLS on your users' own domains.</strong></p>
 
 <p align="center">
   <a href="https://customdomain.ai">Website</a> ·
-  <a href="https://app.customdomain.ai/docs">Docs</a> ·
+  <a href="https://docs.customdomain.ai/docs">Docs</a> ·
   <a href="https://customdomain.ai/custom-domain-api">REST API</a> ·
   <a href="https://customdomain.ai/mcp-server">MCP Server</a> ·
   <a href="https://customdomain.ai/connect-domain-widget">Widget</a> ·
@@ -12,21 +12,21 @@
 </p>
 
 <p align="center">
-  <a href="https://app.customdomain.ai/docs"><img alt="Docs" src="https://img.shields.io/badge/docs-app.customdomain.ai-1c1917?style=flat-square"></a>
-  <a href="https://customdomain.ai/mcp-server"><img alt="MCP server" src="https://img.shields.io/badge/MCP-mcp.customdomain.ai-1c1917?style=flat-square"></a>
-  <a href="https://trust.customdomain.ai"><img alt="Trust Center" src="https://img.shields.io/badge/trust-SOC%202%20·%20ISO%2027001%20·%20GDPR-1c1917?style=flat-square"></a>
-  <a href="https://customdomain.ai/pricing"><img alt="Pricing" src="https://img.shields.io/badge/pricing-from%20%240-1c1917?style=flat-square"></a>
+  <a href="https://docs.customdomain.ai/docs"><img alt="docs" src="https://img.shields.io/badge/docs-docs.customdomain.ai-1c1917?style=flat"></a>
+  <a href="https://customdomain.ai/mcp-server"><img alt="mcp" src="https://img.shields.io/badge/mcp-mcp.customdomain.ai-1c1917?style=flat"></a>
+  <a href="https://trust.customdomain.ai"><img alt="trust center" src="https://img.shields.io/badge/trust-trust.customdomain.ai-1c1917?style=flat"></a>
+  <a href="https://customdomain.ai/pricing"><img alt="pricing" src="https://img.shields.io/badge/pricing-from%20%240-1c1917?style=flat"></a>
 </p>
 
 ---
 
-**Custom Domain** lets a platform's users connect a domain they already own in one click. It detects the user's DNS provider, writes the records automatically, verifies domain ownership (CNAME/TXT), and issues and renews TLS certificates at a managed edge. **63 DNS and registrar providers** are supported through one-click provider authorization, API tokens, or a guided manual flow with automatic verification; **25+ providers configure fully automatically**, and a domain connected through provider authorization is typically **live with HTTPS in about 30 seconds**.
+**CustomDomain™** lets a platform's users connect a domain they already own in one click. It detects the user's DNS provider, writes the records automatically, verifies them against public DNS, and issues and renews TLS certificates at a managed edge. **63 DNS and registrar providers** are catalogued: **25 configure automatically** (17 by scoped API token, 6 by provider OAuth, 2 by Domain Connect), and the other 38 use a guided manual flow with automatic verification. A domain connected through provider authorization is typically **live with HTTPS in about 30 seconds**.
 
 ## See it work
 
-The connect flow, run on a real domain: provider detected, records written, ownership verified, certificate issued.
+The connect flow, run on a real domain: provider detected, records written and verified, certificate issued.
 
-![The Custom Domain connect flow: a real domain going live in about 30 seconds](../assets/connect-flow-demo.gif)
+![The CustomDomain™ connect flow: a real domain going live in about 30 seconds](../assets/connect-flow-demo.gif)
 
 <table>
 <tr>
@@ -34,7 +34,7 @@ The connect flow, run on a real domain: provider detected, records written, owne
 
 **Your user types their domain**
 
-<img src="../assets/app-connect-domain.jpg" alt="Connecting a custom domain in the Custom Domain dashboard" width="100%">
+<img src="../assets/app-connect-domain.jpg" alt="Connecting a custom domain in the CustomDomain™ dashboard" width="100%">
 
 </td>
 <td width="50%" align="center">
@@ -100,17 +100,18 @@ One connect flow across the entire provider landscape: one-click authorization w
 
 | Connection method | Providers | User effort | Typical time to live |
 |---|---|---|---|
-| One-click provider authorization | 25+ auto-configured | One click, no credentials shared | ~30 seconds |
-| API token | Included in the 63 | Paste one scoped token | Minutes |
-| Guided manual + automatic verification | Everything else | Copy 2 to 4 records | Minutes, cache-dependent |
+| One-click provider authorization | 8 (6 provider OAuth, 2 Domain Connect) | One click, no credentials shared | About 30 seconds |
+| Scoped API token | 17 | Paste one scoped token | Minutes |
+| Guided manual + automatic verification | 38 | Copy the exact records shown | Minutes, cache-dependent |
 
 ## For developers and AI agents
 
 > [!TIP]
-> **Coding agents:** point your MCP client at the hosted server and your agent can search, register, and connect domains end to end, with DNS, verification, and TLS handled.
+> **Coding agents:** point your MCP client at the hosted server with an API key and your agent can search, register, and connect domains end to end, with DNS, verification, and TLS handled.
 
 ```bash
-claude mcp add --transport http customdomain https://mcp.customdomain.ai/mcp
+claude mcp add --transport http customdomain https://mcp.customdomain.ai/mcp \
+  --header "Authorization: Bearer $CUSTOMDOMAIN_API_KEY"
 ```
 
 ```json
@@ -118,7 +119,8 @@ claude mcp add --transport http customdomain https://mcp.customdomain.ai/mcp
   "mcpServers": {
     "customdomain": {
       "type": "http",
-      "url": "https://mcp.customdomain.ai/mcp"
+      "url": "https://mcp.customdomain.ai/mcp",
+      "headers": { "Authorization": "Bearer sk_live_YOUR_KEY" }
     }
   }
 }
@@ -130,21 +132,25 @@ claude mcp add --transport http customdomain https://mcp.customdomain.ai/mcp
 <br>
 
 ```bash
-# 1. Create a connection for your user's domain
-curl -X POST https://app.customdomain.ai/v1/connections \
+# 1. Create a connection for your user's domain (the application comes from the key)
+curl -X POST https://api.customdomain.ai/v1/connections \
   -H "Authorization: Bearer $API_KEY" \
-  -d '{"domain": "app.customer.com", "application_id": "<app>"}'
+  -H "Content-Type: application/json" \
+  -d '{"domain": "app.customer.com"}'
 
-# 2. Start one-click provider authorization (fallbacks: token or guided manual)
-curl -X POST https://app.customdomain.ai/v1/connections/<ID>/oauth:start \
-  -H "Authorization: Bearer $API_KEY"
+# 2. Start one-click provider authorization (fallbacks: token or guided manual).
+#    return_origin is required and must be on your allowlist.
+curl -X POST https://api.customdomain.ai/v1/connections/<ID>/oauth:start \
+  -H "Authorization: Bearer $API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"return_origin": "https://app.yourplatform.com"}'
 
-# 3. Poll until live: records written, ownership verified, TLS issued
-curl https://app.customdomain.ai/v1/connections/<ID> \
+# 3. Poll until live: records written, verified in public DNS, TLS issued
+curl https://api.customdomain.ai/v1/connections/<ID> \
   -H "Authorization: Bearer $API_KEY"
 ```
 
-Shapes are illustrative; exact schemas live in the [API reference](https://app.customdomain.ai/docs/api-reference). The API also covers DNS records, TLS lifecycle, monitoring, webhooks, and registrar search and purchase. Agent index: [llms.txt](https://app.customdomain.ai/docs/llms.txt).
+Shapes are illustrative; exact schemas live in the [API reference](https://docs.customdomain.ai/docs/api-reference). The API also covers DNS records, TLS lifecycle, monitoring, webhooks, and registrar search and purchase. Agent index: [llms.txt](https://docs.customdomain.ai/docs/llms.txt).
 
 </details>
 
@@ -152,20 +158,22 @@ Shapes are illustrative; exact schemas live in the [API reference](https://app.c
 
 | Repository | What you'll find |
 |---|---|
-| [docs](https://github.com/CUSTOM-DOMAIN-APP/docs) | The product documentation source of truth, rendered at [app.customdomain.ai/docs](https://app.customdomain.ai/docs). Questions welcome in [Discussions](https://github.com/CUSTOM-DOMAIN-APP/docs/discussions). |
+| [docs](https://github.com/CUSTOM-DOMAIN-APP/docs) | The product documentation source of truth, rendered at [docs.customdomain.ai](https://docs.customdomain.ai/docs). Questions welcome in [Discussions](https://github.com/CUSTOM-DOMAIN-APP/docs/discussions). |
 | [connect-domain-for-website-builders](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders) | The complete guide to offering custom domains on a site builder: records, verification, TLS at tenant scale, connect-flow UX. |
 | [connect-domain-for-email-platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms) | Sending-domain onboarding: SPF, DKIM, DMARC, return-path, deliverability, and automating all of it. |
 | [connect-domain-for-ai-agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents) | Agents that ship websites need domains: the MCP server, the API flow, and agent-safe DNS security. |
 | [connect-domain-for-agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies) | Managing client domains at fleet scale: ownership, white-label connection, drift monitoring, bulk operations. |
 | [awesome-custom-domains](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains) | The curated map of the whole space: managed services, DIY building blocks, protocols, and examples. |
-| [customdomain-mcp](https://github.com/ever-just/customdomain-mcp) | The hosted MCP server: config for Claude, Cursor, and ChatGPT. |
-| [custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks) | Our GitHub App: continuous DNS and TLS health checks for custom domains on GitHub Pages. |
+| [customdomain-sdk](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk) | The browser SDK `customdomain-js` and the React wrapper `@customdomain/react`, both 0.5.0 on npm. |
+| [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp) | The hosted MCP server, version 0.4.0 (release v0.4.0), twelve tools: config for Claude, Cursor, and ChatGPT. |
+| [custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks) | Our GitHub App for continuous DNS and TLS health checks on GitHub Pages custom domains. v0.1.0: the service is deployed, the public App is not registered yet. |
+| [customdomain-brand-kit](https://github.com/CUSTOM-DOMAIN-APP/customdomain-brand-kit) | The brand reference: name rule, oak mark, stone palette, and type. |
 | custom-domains | The product itself: control plane, TLS-terminating edge, dashboard. Private. |
 
 ## Common questions
 
 **How do I let my users connect their own domain?**
-Embed the [connect widget](https://customdomain.ai/connect-domain-widget) or call the [REST API](https://customdomain.ai/custom-domain-api). Custom Domain handles provider detection, DNS, ownership verification, certificates, and serving.
+Embed the [connect widget](https://customdomain.ai/connect-domain-widget) or call the [REST API](https://customdomain.ai/custom-domain-api). CustomDomain™ handles provider detection, DNS, verification, certificates, and serving.
 
 **What is bring your own domain (BYOD)?**
 Letting each customer run your product on a domain they own, like `app.acme.com`, instead of a shared subdomain. [Full definition](https://customdomain.ai/glossary/bring-your-own-domain), and [custom domain vs subdomain](https://customdomain.ai/glossary/custom-domain-vs-subdomain) if you're weighing the tradeoffs.
@@ -177,13 +185,13 @@ With one-click provider authorization, about 30 seconds from typing the domain t
 Yes. SPF, DKIM, DMARC, MX, and return-path records are written through the same connect flow. See [connect-domain-for-email-platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms).
 
 **Is there a free tier?**
-Yes, [pricing starts at $0](https://customdomain.ai/pricing) with the full product: widget, API, automatic TLS, monitoring, and the MCP server.
+Yes. The Free plan is $0 for 10 domain connections a year and includes the Connect DNS engine, the widget and SDK, the REST API and webhooks, DNS drift detection, and the MCP server. The reverse-proxy edge and the SSL management API start on the Growth plan. See [pricing](https://customdomain.ai/pricing).
 
 ---
 
-## Run a domain on GitHub Pages? Add our GitHub App
+## Run a domain on GitHub Pages? Watch it with custom-domain-checks
 
-**[Custom Domain Checks](https://github.com/apps/custom-domain-checks)** watches the custom domain on your GitHub Pages repositories and posts a **Domain health** check on every push: DNS resolution, CNAME or apex target correctness, domain verification (takeover protection), CAA compatibility, certificate expiry, and HTTPS enforcement. It opens a tracking issue the moment something breaks. Free, [open on GitHub](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks).
+**[custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks)** (v0.1.0) is a GitHub App that watches the custom domain on your GitHub Pages repositories and posts a **Domain health** check on every push: DNS resolution, CNAME or apex target correctness, domain verification (takeover protection), CAA compatibility, certificate expiry, and HTTPS enforcement. It opens a tracking issue the moment something breaks. The service is deployed, but the public App is not registered on GitHub yet, so it cannot be installed from GitHub today; the source is open and free to run yourself.
 
 ---
 
@@ -192,5 +200,9 @@ Yes, [pricing starts at $0](https://customdomain.ai/pricing) with the full produ
 </p>
 
 <p align="center">
-  <sub>Security posture, compliance frameworks, and sub-processors: <a href="https://trust.customdomain.ai">trust.customdomain.ai</a> · Questions: <a href="https://github.com/CUSTOM-DOMAIN-APP/docs/discussions">Discussions</a> · <a href="https://customdomain.ai/appointment">Book a call</a></sub>
+  <sub>Docs: <a href="https://docs.customdomain.ai/docs">docs.customdomain.ai</a> · Questions: <a href="https://github.com/CUSTOM-DOMAIN-APP/docs/discussions">Discussions</a> · Status: <a href="https://status.customdomain.ai">status.customdomain.ai</a> · Account and billing: connect@customdomain.ai · Security: security@customdomain.ai (<a href="https://app.customdomain.ai/security">policy</a>) · Security posture and sub-processors: <a href="https://trust.customdomain.ai">trust.customdomain.ai</a> · <a href="https://customdomain.ai/book">Book a call</a></sub>
+</p>
+
+<p align="center">
+  <sub>CustomDomain™ is a product of EverJust Company.</sub>
 </p>
