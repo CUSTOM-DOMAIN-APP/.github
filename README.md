@@ -231,9 +231,9 @@ The organization's repositories, one product. Public unless noted.
 | Repository | Language | What it holds |
 |---|---|---|
 | [`docs`](https://github.com/CUSTOM-DOMAIN-APP/docs) | MDX | The documentation source of truth, plus the Fumadocs renderer in `site/` that serves docs.customdomain.ai |
-| [`customdomain-sdk`](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk) | TypeScript | The browser SDK (`customdomain-js`), the React wrapper (`@customdomain/react`), and the widget bundle they load. Both packages are 0.5.0 on npm |
+| [`customdomain-sdk`](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk) | TypeScript | The browser SDK (`customdomain-js`), the React wrapper (`@customdomain/react`), and the widget bundle they load. Both packages are 0.5.1 on npm |
 | [`customdomain-mcp`](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp) | Markdown | The hosted MCP server's public face: server version 0.4.0 (release v0.4.0), twelve tools, auth model, client configs for Claude, Cursor and ChatGPT |
-| [`custom-domain-checks`](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks) | JavaScript | A GitHub App that posts a domain-health check on every push: DNS resolution, target correctness, CAA, certificate expiry, HTTPS enforcement. v0.1.0; the service is deployed, the public App is not registered yet |
+| [`custom-domain-checks`](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks) | JavaScript | A GitHub App that posts a domain-health check on every push: DNS resolution, target correctness, CAA, certificate expiry, HTTPS enforcement. v0.1.1; the service is deployed, the public App is not registered yet |
 | [`awesome-custom-domains`](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains) | Markdown | The curated map of the category: managed services, DIY building blocks, protocols, examples |
 | [`connect-domain-for-website-builders`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders) | Markdown | Use-case guide: records, verification, TLS at tenant scale, connect-flow UX |
 | [`connect-domain-for-email-platforms`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms) | Markdown | Use-case guide: sending-domain onboarding, SPF, DKIM, DMARC, return-path, deliverability |
@@ -409,9 +409,9 @@ Questions and ideas belong in
 ## Related
 
 - [docs](https://github.com/CUSTOM-DOMAIN-APP/docs): the CustomDomain™ documentation source, rendered at [docs.customdomain.ai](https://docs.customdomain.ai/docs)
-- [customdomain-sdk](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk): the browser SDK `customdomain-js` and the React wrapper `@customdomain/react`, 0.5.0 on npm
+- [customdomain-sdk](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk): the browser SDK `customdomain-js` and the React wrapper `@customdomain/react`, 0.5.1 on npm
 - [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp): the hosted MCP server, version 0.4.0, twelve tools
-- [custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks): the GitHub App for DNS and TLS health checks, v0.1.0, public App not registered yet
+- [custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks): the GitHub App for DNS and TLS health checks, v0.1.1, public App not registered yet
 - [awesome-custom-domains](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains): the curated list of the category, including the alternatives to this product
 - [customdomain-brand-kit](https://github.com/CUSTOM-DOMAIN-APP/customdomain-brand-kit): the name rule, mark, palette and type
 - [connect-domain-for-ai-agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents): CustomDomain™ for AI Agents

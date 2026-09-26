@@ -164,9 +164,9 @@ Shapes are illustrative; exact schemas live in the [API reference](https://docs.
 | [connect-domain-for-ai-agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents) | Agents that ship websites need domains: the MCP server, the API flow, and agent-safe DNS security. |
 | [connect-domain-for-agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies) | Managing client domains at fleet scale: ownership, white-label connection, drift monitoring, bulk operations. |
 | [awesome-custom-domains](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains) | The curated map of the whole space: managed services, DIY building blocks, protocols, and examples. |
-| [customdomain-sdk](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk) | The browser SDK `customdomain-js` and the React wrapper `@customdomain/react`, both 0.5.0 on npm. |
+| [customdomain-sdk](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk) | The browser SDK `customdomain-js` and the React wrapper `@customdomain/react`, both 0.5.1 on npm. |
 | [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp) | The hosted MCP server, version 0.4.0 (release v0.4.0), twelve tools: config for Claude, Cursor, and ChatGPT. |
-| [custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks) | Our GitHub App for continuous DNS and TLS health checks on GitHub Pages custom domains. v0.1.0: the service is deployed, the public App is not registered yet. |
+| [custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks) | Our GitHub App for continuous DNS and TLS health checks on GitHub Pages custom domains. v0.1.1: the service is deployed, the public App is not registered yet. |
 | [customdomain-brand-kit](https://github.com/CUSTOM-DOMAIN-APP/customdomain-brand-kit) | The brand reference: name rule, oak mark, stone palette, and type. |
 | custom-domains | The product itself: control plane, TLS-terminating edge, dashboard. Private. |
 
@@ -191,7 +191,7 @@ Yes. The Free plan is $0 for 10 domain connections a year and includes the Conne
 
 ## Run a domain on GitHub Pages? Watch it with custom-domain-checks
 
-**[custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks)** (v0.1.0) is a GitHub App that watches the custom domain on your GitHub Pages repositories and posts a **Domain health** check on every push: DNS resolution, CNAME or apex target correctness, domain verification (takeover protection), CAA compatibility, certificate expiry, and HTTPS enforcement. It opens a tracking issue the moment something breaks. The service is deployed, but the public App is not registered on GitHub yet, so it cannot be installed from GitHub today; the source is open and free to run yourself.
+**[custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks)** (v0.1.1) is a GitHub App that watches the custom domain on your GitHub Pages repositories and posts a **Domain health** check on every push: DNS resolution, CNAME or apex target correctness, domain verification (takeover protection), CAA compatibility, certificate expiry, and HTTPS enforcement. It opens a tracking issue the moment something breaks. The service is deployed, but the public App is not registered on GitHub yet, so it cannot be installed from GitHub today; the source is open and free to run yourself.
 
 ---
 
