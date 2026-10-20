@@ -15,12 +15,12 @@
   <a href="https://docs.customdomain.ai/docs"><img alt="docs" src="https://img.shields.io/badge/docs-docs.customdomain.ai-1c1917?style=flat"></a>
   <a href="https://customdomain.ai/mcp-server"><img alt="mcp" src="https://img.shields.io/badge/mcp-mcp.customdomain.ai-1c1917?style=flat"></a>
   <a href="https://trust.customdomain.ai"><img alt="trust center" src="https://img.shields.io/badge/trust-trust.customdomain.ai-1c1917?style=flat"></a>
-  <a href="https://customdomain.ai/pricing"><img alt="pricing" src="https://img.shields.io/badge/pricing-from%20%240-1c1917?style=flat"></a>
+  <a href="https://customdomain.ai/pricing"><img alt="pricing" src="https://img.shields.io/badge/pricing-14--day%20free%20trial-1c1917?style=flat"></a>
 </p>
 
 ---
 
-**CustomDomain™** lets a platform's users connect a domain they already own in one click. It detects the user's DNS provider, writes the records automatically, verifies them against public DNS, and issues and renews TLS certificates at a managed edge. **63 DNS and registrar providers** are catalogued: **25 configure automatically** (17 by scoped API token, 6 by provider OAuth, 2 by Domain Connect), and the other 38 use a guided manual flow with automatic verification. A domain connected through provider authorization is typically **live with HTTPS in about 30 seconds**.
+**CustomDomain™** lets a platform's users connect a domain they already own in one click. It detects the user's DNS provider, writes the records automatically, verifies them against public DNS, and issues and renews TLS certificates at a managed edge. **178 DNS and registrar providers** are catalogued: **62 configure automatically** (55 by scoped API token, 6 by provider OAuth, 1 by Domain Connect), and the other 116 use a guided manual flow with automatic verification. A domain connected through provider authorization is typically **live with HTTPS in about 30 seconds**.
 
 ## See it work
 
@@ -57,7 +57,7 @@ The connect flow, run on a real domain: provider detected, records written and v
 
 Your users publish sites and want their own domain on them.
 
-[connect-domain-for-website-builders](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders)
+[Custom domains for website builders](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders)
 
 </td>
 <td align="center" width="25%">
@@ -66,16 +66,16 @@ Your users publish sites and want their own domain on them.
 
 Sending domains with SPF, DKIM, and DMARC written automatically.
 
-[connect-domain-for-email-platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms)
+[Custom sending domains for email platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms)
 
 </td>
 <td align="center" width="25%">
 
 **🤖 AI agents**
 
-Agents that provision apps need real domains: search, buy, connect, over MCP or API.
+Agents that provision apps need real domains: search, connect and verify them, over MCP or API.
 
-[connect-domain-for-ai-agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents)
+[Custom domains for AI agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents)
 
 </td>
 <td align="center" width="25%">
@@ -84,7 +84,7 @@ Agents that provision apps need real domains: search, buy, connect, over MCP or 
 
 Client domains under your brand, without collecting registrar logins.
 
-[connect-domain-for-agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies)
+[Custom domains for agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies)
 
 </td>
 </tr>
@@ -92,7 +92,7 @@ Client domains under your brand, without collecting registrar logins.
 
 Also: **e-commerce platforms** (a storefront per merchant domain), **creator tools** (a domain per creator), and any **multi-tenant SaaS** where tenants deserve their own name in the address bar. Start at [custom domains for SaaS](https://customdomain.ai/custom-domains-for-saas).
 
-## 63 supported DNS and registrar providers
+## 178 DNS and registrar providers catalogued
 
 One connect flow across the entire provider landscape: one-click authorization where providers support it, API tokens where they offer them, and a guided manual path with automatic verification everywhere else. No user ever hits a dead end.
 
@@ -100,14 +100,16 @@ One connect flow across the entire provider landscape: one-click authorization w
 
 | Connection method | Providers | User effort | Typical time to live |
 |---|---|---|---|
-| One-click provider authorization | 8 (6 provider OAuth, 2 Domain Connect) | One click, no credentials shared | About 30 seconds |
-| Scoped API token | 17 | Paste one scoped token | Minutes |
-| Guided manual + automatic verification | 38 | Copy the exact records shown | Minutes, cache-dependent |
+| One-click provider authorization | 7 (6 provider OAuth, 1 Domain Connect) | One click, no credentials shared | About 30 seconds |
+| Scoped API token | 55 | Paste one scoped token | Minutes |
+| Guided manual + automatic verification | 116 | Copy the exact records shown | Minutes, cache-dependent |
 
 ## For developers and AI agents
 
+**MCP server:** `https://mcp.customdomain.ai/mcp` (streamable HTTP), the official CustomDomain™ server, listed in the MCP registry as `ai.customdomain/mcp`, version 0.5.0 with 17 tools. Setup for Claude, Cursor, VS Code and GitHub Copilot: [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp).
+
 > [!TIP]
-> **Coding agents:** point your MCP client at the hosted server with an API key and your agent can search, register, and connect domains end to end, with DNS, verification, and TLS handled.
+> **Coding agents:** point your MCP client at the hosted server with an API key and your agent can search for, connect, verify and diagnose domains, with DNS, verification, and TLS handled.
 
 ```bash
 claude mcp add --transport http customdomain https://mcp.customdomain.ai/mcp \
@@ -120,7 +122,7 @@ claude mcp add --transport http customdomain https://mcp.customdomain.ai/mcp \
     "customdomain": {
       "type": "http",
       "url": "https://mcp.customdomain.ai/mcp",
-      "headers": { "Authorization": "Bearer sk_live_YOUR_KEY" }
+      "headers": { "Authorization": "Bearer cd_live_YOUR_KEY" }
     }
   }
 }
@@ -159,14 +161,14 @@ Shapes are illustrative; exact schemas live in the [API reference](https://docs.
 | Repository | What you'll find |
 |---|---|
 | [docs](https://github.com/CUSTOM-DOMAIN-APP/docs) | The product documentation source of truth, rendered at [docs.customdomain.ai](https://docs.customdomain.ai/docs). Questions welcome in [Discussions](https://github.com/CUSTOM-DOMAIN-APP/docs/discussions). |
-| [connect-domain-for-website-builders](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders) | The complete guide to offering custom domains on a site builder: records, verification, TLS at tenant scale, connect-flow UX. |
-| [connect-domain-for-email-platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms) | Sending-domain onboarding: SPF, DKIM, DMARC, return-path, deliverability, and automating all of it. |
-| [connect-domain-for-ai-agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents) | Agents that ship websites need domains: the MCP server, the API flow, and agent-safe DNS security. |
-| [connect-domain-for-agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies) | Managing client domains at fleet scale: ownership, white-label connection, drift monitoring, bulk operations. |
+| [connect-domain-for-website-builders](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders) | Custom domains for website builders: records, verification, TLS at tenant scale, connect-flow UX, and Next.js on Vercel, Caddy and Cloudflare for SaaS compared. |
+| [connect-domain-for-email-platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms) | Custom sending domains for email platforms: SPF, DKIM, DMARC and return-path records for Amazon SES, SendGrid, Postmark and Resend, and automating all of it. |
+| [connect-domain-for-ai-agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents) | Custom domains for AI agents: MCP setup for Claude, Cursor, VS Code and GitHub Copilot, the API flow, and agent-safe DNS security. |
+| [connect-domain-for-agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies) | Custom domains for agencies: client domains without registrar logins, white-label connection, drift monitoring, bulk operations. |
 | [awesome-custom-domains](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains) | The curated map of the whole space: managed services, DIY building blocks, protocols, and examples. |
-| [customdomain-sdk](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk) | The browser SDK `customdomain-js` and the React wrapper `@customdomain/react`, both 0.5.1 on npm. |
-| [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp) | The hosted MCP server, version 0.4.0 (release v0.4.0), twelve tools: config for Claude, Cursor, and ChatGPT. |
-| [custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks) | Our GitHub App for continuous DNS and TLS health checks on GitHub Pages custom domains. v0.1.1: the service is deployed, the public App is not registered yet. |
+| [customdomain-sdk](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk) | The browser SDK `customdomain-js` and the React wrapper `@customdomain/react`, both 0.5.4 on npm. |
+| [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp) | The hosted MCP server at `https://mcp.customdomain.ai/mcp`, version 0.5.0, seventeen tools: setup for Claude, Cursor, VS Code, GitHub Copilot and ChatGPT. |
+| [custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks) | DNS and SSL health checks for GitHub Pages custom domains: a GitHub Action you can add to a workflow today, and a GitHub App whose service is deployed but which is not registered on GitHub yet. |
 | [customdomain-brand-kit](https://github.com/CUSTOM-DOMAIN-APP/customdomain-brand-kit) | The brand reference: name rule, oak mark, stone palette, and type. |
 | custom-domains | The product itself: control plane, TLS-terminating edge, dashboard. Private. |
 
@@ -184,14 +186,14 @@ With one-click provider authorization, about 30 seconds from typing the domain t
 **Does this work for email domains?**
 Yes. SPF, DKIM, DMARC, MX, and return-path records are written through the same connect flow. See [connect-domain-for-email-platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms).
 
-**Is there a free tier?**
-Yes. The Free plan is $0 for 10 domain connections a year and includes the Connect DNS engine, the widget and SDK, the REST API and webhooks, DNS drift detection, and the MCP server. The reverse-proxy edge and the SSL management API start on the Growth plan. See [pricing](https://customdomain.ai/pricing).
+**Is there a free trial?**
+Yes. Every self-serve plan starts with a 14 day free trial, from $10 a month (Starter, 10 domain connections a year), and a new workspace connects its first ten domains without a card. Every plan includes the Connect DNS engine, the widget and SDK, the REST API and webhooks, DNS drift detection, and the MCP server. The reverse-proxy edge and the SSL management API start on the Growth plan. See [pricing](https://customdomain.ai/pricing).
 
 ---
 
 ## Run a domain on GitHub Pages? Watch it with custom-domain-checks
 
-**[custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks)** (v0.1.1) is a GitHub App that watches the custom domain on your GitHub Pages repositories and posts a **Domain health** check on every push: DNS resolution, CNAME or apex target correctness, domain verification (takeover protection), CAA compatibility, certificate expiry, and HTTPS enforcement. It opens a tracking issue the moment something breaks. The service is deployed, but the public App is not registered on GitHub yet, so it cannot be installed from GitHub today; the source is open and free to run yourself.
+**[custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks)** runs DNS and SSL health checks on the custom domain of a GitHub Pages site: DNS resolution, CNAME or apex target correctness, domain verification (takeover protection), CAA compatibility, certificate expiry, and HTTPS enforcement. Add it to a workflow as a GitHub Action today and it annotates every problem and fails the job on one. The GitHub App version posts a **Domain health** check on every push and opens a tracking issue when something breaks; its service is deployed, but the App is not registered on GitHub yet, so it cannot be installed from GitHub today. The source is open and free to run yourself.
 
 ---
 
