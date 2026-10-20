@@ -40,8 +40,9 @@ reaches the same policy.
 
 That makes this repository small but load-bearing. It is the only place in the organization
 where a stranger's first impression is written, and the only place a security report gets
-routed from. It carries no code, no build step and no dependencies: four Markdown files, one
-profile page, and four committed image assets that the profile page embeds by relative path.
+routed from. It carries no build step and no dependencies: four Markdown files, one profile
+page, four committed image assets that the profile page embeds by relative path, and one admin
+script that applies the repositories' descriptions and topics.
 
 The rest of this document is split in half on purpose. Everything above the Quickstart
 explains what CustomDomain™ is and who it is for, because that is what a first-time visitor
@@ -75,9 +76,9 @@ then terminates TLS for that hostname.
 
 - **Connects a domain in about thirty seconds** on the one-click authorization path, from the
   moment the user types it to the moment the hostname serves HTTPS.
-- **Covers 63 DNS and registrar providers** through a single census, with exactly 25 of them
-  configured fully automatically (17 by scoped API token, 6 by provider OAuth, 2 by Domain
-  Connect) and no dead end for the other 38, which fall back to a guided manual flow whose
+- **Covers 178 DNS and registrar providers** through a single census, with exactly 62 of them
+  configured fully automatically (55 by scoped API token, 6 by provider OAuth, 1 by Domain
+  Connect) and no dead end for the other 116, which fall back to a guided manual flow whose
   records are verified automatically once they appear.
 - **Issues and renews real Let's Encrypt certificates** at the edge. Verified end to end in
   July 2026 against a live connected domain: a browser-trusted production certificate, valid
@@ -88,8 +89,8 @@ then terminates TLS for that hostname.
   domain's own authoritative DNS, checked by value rather than by presence.
 - **Handles email domains through the same flow**, writing MX, SPF, DKIM and DMARC records
   from server-side templates rather than asking anyone to hand-assemble an SPF string.
-- **Gives AI agents a first-class path.** The hosted MCP server (version 0.4.0) exposes twelve
-  tools over streamable HTTP, speaks protocol revision `2025-06-18`, and is listed in the
+- **Gives AI agents a first-class path.** The hosted MCP server at `https://mcp.customdomain.ai/mcp`
+  (version 0.5.0) exposes seventeen tools over streamable HTTP, speaks protocol revision `2025-06-18`, and is listed in the
   official MCP registry as `ai.customdomain/mcp`. No tool accepts a raw DNS record as input, which closes
   off the prompt-injection paths that would otherwise end in arbitrary DNS writes.
 - **Isolates tenants strictly.** A July 2026 black-box production audit walked the API as a
@@ -101,9 +102,10 @@ All 18 of the platform's Domain Connect templates are merged upstream into the
 `#1340`, and the 16 template catalog in `#1346`), which is what lets a supporting provider apply
 the record set from its own dashboard rather than from ours.
 
-Pricing starts at [$0](https://customdomain.ai/pricing): the Free plan includes ten domain
-connections per year with the Connect DNS engine, the widget and SDK, the REST API and
-webhooks, DNS drift detection, and the MCP server. The reverse-proxy edge and the SSL
+Pricing starts at [$10 a month](https://customdomain.ai/pricing) (Starter, ten domain
+connections a year) after a 14 day free trial, and a new workspace connects its first ten
+domains without a card. Every plan includes the Connect DNS engine, the widget and SDK, the REST
+API and webhooks, DNS drift detection, and the MCP server. The reverse-proxy edge and the SSL
 management API start on the Growth plan.
 
 ## Who it is for
@@ -150,8 +152,8 @@ git commit -am "profile: <what changed>" && git push
 ```
 
 To use the **product** instead, connect a domain from the command line with an API key from
-[the console](https://app.customdomain.ai/signup). Keys look like `sk_live_...` and are shown
-once, at creation.
+[the console](https://app.customdomain.ai/signup). Keys look like `cd_live_...` (older keys start
+`sk_live_` and keep working); every workspace has a default key on the **API & SDK** page.
 
 ```bash
 export CUSTOMDOMAIN_API_KEY="<your API key>"   # read it from your secret manager; never commit it
@@ -182,8 +184,8 @@ and unknown body fields are rejected with a `400`. Exact request and response sh
 
 ## Repository layout
 
-Nine tracked files. Every one of them is either rendered by GitHub or embedded by something
-that is.
+Ten tracked files. Nine of them are rendered by GitHub or embedded by something that is; the
+tenth is an admin script that is run by hand.
 
 ```text
 .github/
@@ -193,6 +195,8 @@ that is.
 ├── CONTRIBUTING.md      Org-wide contribution defaults: where docs live, house style.
 ├── SECURITY.md          Org-wide vulnerability policy and the reporting address.
 ├── SUPPORT.md           Org-wide support routing: docs, discussions, book a call.
+├── scripts/
+│   └── apply-repo-settings.sh   Org and repository descriptions and topics, applied with gh.
 └── assets/
     ├── connect-flow-demo.gif    3.5 MB. A real domain going live, start to finish.
     ├── provider-logos.png       769 KB. The supported provider wall.
@@ -231,13 +235,13 @@ The organization's repositories, one product. Public unless noted.
 | Repository | Language | What it holds |
 |---|---|---|
 | [`docs`](https://github.com/CUSTOM-DOMAIN-APP/docs) | MDX | The documentation source of truth, plus the Fumadocs renderer in `site/` that serves docs.customdomain.ai |
-| [`customdomain-sdk`](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk) | TypeScript | The browser SDK (`customdomain-js`), the React wrapper (`@customdomain/react`), and the widget bundle they load. Both packages are 0.5.1 on npm |
-| [`customdomain-mcp`](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp) | Markdown | The hosted MCP server's public face: server version 0.4.0 (release v0.4.0), twelve tools, auth model, client configs for Claude, Cursor and ChatGPT |
-| [`custom-domain-checks`](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks) | JavaScript | A GitHub App that posts a domain-health check on every push: DNS resolution, target correctness, CAA, certificate expiry, HTTPS enforcement. v0.1.1; the service is deployed, the public App is not registered yet |
+| [`customdomain-sdk`](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk) | TypeScript | The browser SDK (`customdomain-js`), the React wrapper (`@customdomain/react`), and the widget bundle they load. Both packages are 0.5.4 on npm |
+| [`customdomain-mcp`](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp) | Markdown | The hosted MCP server's public face: endpoint `https://mcp.customdomain.ai/mcp`, server version 0.5.0, seventeen tools, auth model, setup for Claude, Cursor, VS Code, GitHub Copilot and ChatGPT |
+| [`custom-domain-checks`](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks) | JavaScript | DNS and SSL health checks for GitHub Pages custom domains, as a GitHub Action and a GitHub App: DNS resolution, target correctness, CAA, certificate expiry, HTTPS enforcement. The Action runs today; the App's service is deployed, the App is not registered on GitHub yet |
 | [`awesome-custom-domains`](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains) | Markdown | The curated map of the category: managed services, DIY building blocks, protocols, examples |
-| [`connect-domain-for-website-builders`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders) | Markdown | Use-case guide: records, verification, TLS at tenant scale, connect-flow UX |
-| [`connect-domain-for-email-platforms`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms) | Markdown | Use-case guide: sending-domain onboarding, SPF, DKIM, DMARC, return-path, deliverability |
-| [`connect-domain-for-ai-agents`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents) | Markdown | Use-case guide: the MCP server, the API flow, agent-safe DNS security |
+| [`connect-domain-for-website-builders`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders) | Markdown | Custom domains for website builders: records, verification, TLS at tenant scale, connect-flow UX, Vercel, Caddy and Cloudflare for SaaS compared |
+| [`connect-domain-for-email-platforms`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms) | Markdown | Custom sending domains for email platforms: SPF, DKIM, DMARC, return-path for SES, SendGrid, Postmark and Resend |
+| [`connect-domain-for-ai-agents`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents) | Markdown | Custom domains for AI agents: MCP setup for Claude, Cursor, VS Code and Copilot, the API flow, agent-safe DNS security |
 | [`connect-domain-for-agencies`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies) | Markdown | Use-case guide: fleet-scale client domains, white-label connection, drift monitoring |
 | [`customdomain-brand-kit`](https://github.com/CUSTOM-DOMAIN-APP/customdomain-brand-kit) | Markdown | The brand reference: name rule, oak mark, stone palette and type (`IDENTITY.md`); the asset files are not committed yet |
 | [`.github`](https://github.com/CUSTOM-DOMAIN-APP/.github) | Markdown | This repository |
@@ -304,7 +308,7 @@ is the set of paths GitHub reads by convention, plus repository metadata set thr
 | Contribution defaults | `CONTRIBUTING.md` | Inherited by every repo in the org without its own copy |
 | Security policy | `SECURITY.md` | Powers "Report a vulnerability" org-wide; routes to `security@customdomain.ai` |
 | Support routing | `SUPPORT.md` | Shown in the new-issue chooser org-wide |
-| Repository description, homepage, topics | GitHub repository metadata | `gh repo edit`, not a file in the tree |
+| Repository description, homepage, topics | GitHub repository metadata | Not a file GitHub reads: `scripts/apply-repo-settings.sh` applies them with `gh` when an org admin runs it |
 
 Integrators consuming the platform supply exactly three credential shapes. All three are
 secrets. **None of them belongs in a file that is committed anywhere**, in this organization
@@ -312,13 +316,13 @@ or in yours. Reference them from a secret manager and inject at run time.
 
 | Name | What it is | Scope |
 |---|---|---|
-| `CUSTOMDOMAIN_API_KEY` | Console API key, `sk_live_...` or `sk_test_...`, shown once at creation and stored only as a hash | The whole tenant: every application, connection, webhook and billing record |
+| `CUSTOMDOMAIN_API_KEY` | Console API key, `cd_live_...` or `cd_test_...` (older `sk_live_` keys keep working), stored only as a hash | The whole tenant: every application, connection, webhook and billing record |
 | `APPLICATION_ID` | The application identifier, also called `CLIENT_ID` in OAuth contexts. Not a secret on its own | One application |
 | `CLIENT_SECRET` | Returned once when an application is created. Its only job is minting short-lived JWTs | One application |
 
 Prefer the JWT path over a raw API key whenever an agent or a service only needs one
 application: exchange `APPLICATION_ID` and `CLIENT_SECRET` at
-`POST https://mcp.customdomain.ai/token` for an hour-long bearer token. A leaked `sk_live_` key carries the entire tenant; a leaked JWT expires. Widget
+`POST https://mcp.customdomain.ai/token` for a bearer token that lasts 15 minutes. A leaked `cd_live_` key carries the entire tenant; a leaked JWT expires. Widget
 tokens follow the same rule and are minted server-side, never in the browser.
 
 ## Deployment and operations
@@ -361,8 +365,8 @@ curl -s https://api.customdomain.ai/v1/config
 ## Testing
 
 There is no test suite to run here, and inventing one would be theater. What this repository
-is actually verified against is link rot and render correctness, both of which are cheap to
-check and are the only two ways it can be wrong.
+is actually verified against is link rot, render correctness and a settings script that still
+parses, all of which are cheap to check.
 
 ```bash
 # 1. Every link resolves. Use GET, not HEAD: several hosts answer 405 to HEAD.
@@ -376,8 +380,11 @@ grep -ohE 'https?://[^)"< ]+' *.md profile/*.md | sed 's/[.,)]*$//' | sort -u | 
 grep -ohE '\.\./assets/[A-Za-z0-9._-]+' profile/README.md | sort -u | \
   while read -r a; do [ -f "${a#../}" ] || echo "MISSING $a"; done
 
-# 3. No secret ever lands in the tree.
-grep -rnE 'sk_live_|sk_test_|ghp_|AKIA[0-9A-Z]{16}' . --exclude-dir=.git && echo "STOP" || echo "clean"
+# 3. No secret ever lands in the tree (real keys are the prefix plus 32 hex characters).
+grep -rnE '(cd|sk)_(live|test)_[0-9a-f]{32}|ghp_|AKIA[0-9A-Z]{16}' . --exclude-dir=.git && echo "STOP" || echo "clean"
+
+# 4. The settings script parses.
+bash -n scripts/apply-repo-settings.sh && echo "script parses"
 ```
 
 Run the first check before every push. A dead link on the organization front page is the most
@@ -409,15 +416,15 @@ Questions and ideas belong in
 ## Related
 
 - [docs](https://github.com/CUSTOM-DOMAIN-APP/docs): the CustomDomain™ documentation source, rendered at [docs.customdomain.ai](https://docs.customdomain.ai/docs)
-- [customdomain-sdk](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk): the browser SDK `customdomain-js` and the React wrapper `@customdomain/react`, 0.5.1 on npm
-- [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp): the hosted MCP server, version 0.4.0, twelve tools
-- [custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks): the GitHub App for DNS and TLS health checks, v0.1.1, public App not registered yet
+- [customdomain-sdk](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk): the browser SDK `customdomain-js` and the React wrapper `@customdomain/react`, 0.5.4 on npm
+- [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp): the hosted MCP server at `https://mcp.customdomain.ai/mcp`, version 0.5.0, seventeen tools
+- [custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks): DNS and SSL health checks for GitHub Pages custom domains, as a GitHub Action and a GitHub App (not registered on GitHub yet)
 - [awesome-custom-domains](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains): the curated list of the category, including the alternatives to this product
 - [customdomain-brand-kit](https://github.com/CUSTOM-DOMAIN-APP/customdomain-brand-kit): the name rule, mark, palette and type
-- [connect-domain-for-ai-agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents): CustomDomain™ for AI Agents
-- [connect-domain-for-agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies): CustomDomain™ for Agencies
-- [connect-domain-for-email-platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms): CustomDomain™ for Email Platforms
-- [connect-domain-for-website-builders](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders): CustomDomain™ for Website Builders
+- [connect-domain-for-ai-agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents): custom domains for AI agents, the field guide
+- [connect-domain-for-agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies): custom domains for agencies, the field guide
+- [connect-domain-for-email-platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms): custom sending domains for email platforms, the field guide
+- [connect-domain-for-website-builders](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders): custom domains for website builders, the field guide
 
 ## Support
 
