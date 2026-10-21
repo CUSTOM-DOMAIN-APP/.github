@@ -90,7 +90,7 @@ then terminates TLS for that hostname.
 - **Handles email domains through the same flow**, writing MX, SPF, DKIM and DMARC records
   from server-side templates rather than asking anyone to hand-assemble an SPF string.
 - **Gives AI agents a first-class path.** The hosted MCP server at `https://mcp.customdomain.ai/mcp`
-  (version 0.5.0) exposes seventeen tools over streamable HTTP, speaks protocol revision `2025-06-18`, and is listed in the
+  (version 0.6.0) exposes twenty tools over streamable HTTP, speaks protocol revision `2025-06-18`, and is listed in the
   official MCP registry as `ai.customdomain/mcp`. No tool accepts a raw DNS record as input, which closes
   off the prompt-injection paths that would otherwise end in arbitrary DNS writes.
 - **Isolates tenants strictly.** A July 2026 black-box production audit walked the API as a
@@ -236,7 +236,7 @@ The organization's repositories, one product. Public unless noted.
 |---|---|---|
 | [`docs`](https://github.com/CUSTOM-DOMAIN-APP/docs) | MDX | The documentation source of truth, plus the Fumadocs renderer in `site/` that serves docs.customdomain.ai |
 | [`customdomain-sdk`](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk) | TypeScript | The browser SDK (`customdomain-js`), the React wrapper (`@customdomain/react`), and the widget bundle they load. Both packages are 0.5.4 on npm |
-| [`customdomain-mcp`](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp) | Markdown | The hosted MCP server's public face: endpoint `https://mcp.customdomain.ai/mcp`, server version 0.5.0, seventeen tools, auth model, setup for Claude, Cursor, VS Code, GitHub Copilot and ChatGPT |
+| [`customdomain-mcp`](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp) | Markdown | The hosted MCP server's public face: endpoint `https://mcp.customdomain.ai/mcp`, server version 0.6.0, twenty tools, auth model, setup for Claude, Cursor, VS Code, GitHub Copilot and ChatGPT |
 | [`custom-domain-checks`](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks) | JavaScript | DNS and SSL health checks for GitHub Pages custom domains, as a GitHub Action and a GitHub App: DNS resolution, target correctness, CAA, certificate expiry, HTTPS enforcement. The Action runs today; the App's service is deployed, the App is not registered on GitHub yet |
 | [`awesome-custom-domains`](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains) | Markdown | The curated map of the category: managed services, DIY building blocks, protocols, examples |
 | [`connect-domain-for-website-builders`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders) | Markdown | Custom domains for website builders: records, verification, TLS at tenant scale, connect-flow UX, Vercel, Caddy and Cloudflare for SaaS compared |
@@ -417,7 +417,7 @@ Questions and ideas belong in
 
 - [docs](https://github.com/CUSTOM-DOMAIN-APP/docs): the CustomDomain™ documentation source, rendered at [docs.customdomain.ai](https://docs.customdomain.ai/docs)
 - [customdomain-sdk](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk): the browser SDK `customdomain-js` and the React wrapper `@customdomain/react`, 0.5.4 on npm
-- [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp): the hosted MCP server at `https://mcp.customdomain.ai/mcp`, version 0.5.0, seventeen tools
+- [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp): the hosted MCP server at `https://mcp.customdomain.ai/mcp`, version 0.6.0, twenty tools
 - [custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks): DNS and SSL health checks for GitHub Pages custom domains, as a GitHub Action and a GitHub App (not registered on GitHub yet)
 - [awesome-custom-domains](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains): the curated list of the category, including the alternatives to this product
 - [customdomain-brand-kit](https://github.com/CUSTOM-DOMAIN-APP/customdomain-brand-kit): the name rule, mark, palette and type
