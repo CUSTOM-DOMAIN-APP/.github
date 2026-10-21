@@ -106,7 +106,7 @@ One connect flow across the entire provider landscape: one-click authorization w
 
 ## For developers and AI agents
 
-**MCP server:** `https://mcp.customdomain.ai/mcp` (streamable HTTP), the official CustomDomain™ server, listed in the MCP registry as `ai.customdomain/mcp`, version 0.5.0 with 17 tools. Setup for Claude, Cursor, VS Code and GitHub Copilot: [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp).
+**MCP server:** `https://mcp.customdomain.ai/mcp` (streamable HTTP), the official CustomDomain™ server, listed in the MCP registry as `ai.customdomain/mcp`, server version 0.6.0 with 20 tools. Setup for Claude, Cursor, VS Code and GitHub Copilot: [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp).
 
 > [!TIP]
 > **Coding agents:** point your MCP client at the hosted server with an API key and your agent can search for, connect, verify and diagnose domains, with DNS, verification, and TLS handled.
@@ -167,7 +167,7 @@ Shapes are illustrative; exact schemas live in the [API reference](https://docs.
 | [connect-domain-for-agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies) | Custom domains for agencies: client domains without registrar logins, white-label connection, drift monitoring, bulk operations. |
 | [awesome-custom-domains](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains) | The curated map of the whole space: managed services, DIY building blocks, protocols, and examples. |
 | [customdomain-sdk](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk) | The browser SDK `customdomain-js` and the React wrapper `@customdomain/react`, both 0.5.4 on npm. |
-| [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp) | The hosted MCP server at `https://mcp.customdomain.ai/mcp`, version 0.5.0, seventeen tools: setup for Claude, Cursor, VS Code, GitHub Copilot and ChatGPT. |
+| [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp) | The hosted MCP server at `https://mcp.customdomain.ai/mcp`, version 0.6.0, twenty tools: setup for Claude, Cursor, VS Code, GitHub Copilot and ChatGPT. |
 | [custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks) | DNS and SSL health checks for GitHub Pages custom domains: a GitHub Action you can add to a workflow today, and a GitHub App whose service is deployed but which is not registered on GitHub yet. |
 | [customdomain-brand-kit](https://github.com/CUSTOM-DOMAIN-APP/customdomain-brand-kit) | The brand reference: name rule, oak mark, stone palette, and type. |
 | custom-domains | The product itself: control plane, TLS-terminating edge, dashboard. Private. |
