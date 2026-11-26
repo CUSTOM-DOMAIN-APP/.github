@@ -20,7 +20,7 @@
 
 ---
 
-**CustomDomain™** lets a platform's users connect a domain they already own in one click. It detects the user's DNS provider, writes the records automatically, verifies them against public DNS, and issues and renews TLS certificates at a managed edge. **178 DNS and registrar providers** are catalogued: **62 configure automatically** (55 by scoped API token, 6 by provider OAuth, 1 by Domain Connect), and the other 116 use a guided manual flow with automatic verification. A domain connected through provider authorization is typically **live with HTTPS in about 30 seconds**.
+**CustomDomain™** lets a platform's users connect a domain they already own in one click. It detects the user's DNS provider, writes the records automatically, verifies them against public DNS, and issues and renews TLS certificates at a managed edge. Many DNS and registrar providers configure automatically, and the rest use a guided manual flow with automatic verification. A domain connected through provider authorization is typically **live with HTTPS in about 30 seconds**.
 
 ## See it work
 
@@ -92,21 +92,21 @@ Client domains under your brand, without collecting registrar logins.
 
 Also: **e-commerce platforms** (a storefront per merchant domain), **creator tools** (a domain per creator), and any **multi-tenant SaaS** where tenants deserve their own name in the address bar. Start at [custom domains for SaaS](https://customdomain.ai/custom-domains-for-saas).
 
-## 178 DNS and registrar providers catalogued
+## DNS and registrar providers
 
 One connect flow across the entire provider landscape: one-click authorization where providers support it, API tokens where they offer them, and a guided manual path with automatic verification everywhere else. No user ever hits a dead end.
 
 <a href="https://customdomain.ai/one-click-dns-setup"><img src="../assets/provider-logos.png" alt="The supported DNS and registrar providers wall on customdomain.ai" width="100%"></a>
 
-| Connection method | Providers | User effort | Typical time to live |
-|---|---|---|---|
-| One-click provider authorization | 7 (6 provider OAuth, 1 Domain Connect) | One click, no credentials shared | About 30 seconds |
-| Scoped API token | 55 | Paste one scoped token | Minutes |
-| Guided manual + automatic verification | 116 | Copy the exact records shown | Minutes, cache-dependent |
+| Connection method | User effort | Typical time to live |
+|---|---|---|
+| One-click provider authorization | One click, no credentials shared | About 30 seconds |
+| Scoped API token | Paste one scoped token | Minutes |
+| Guided manual + automatic verification | Copy the exact records shown | Minutes, cache-dependent |
 
 ## For developers and AI agents
 
-**MCP server:** `https://mcp.customdomain.ai/mcp` (streamable HTTP), the official CustomDomain™ server, listed in the MCP registry as `ai.customdomain/mcp`, server version 0.6.0 with 20 tools. Setup for Claude, Cursor, VS Code and GitHub Copilot: [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp).
+**MCP server:** `https://mcp.customdomain.ai/mcp` (streamable HTTP), the official CustomDomain™ server, listed in the MCP registry as `ai.customdomain/mcp`, server version 0.6.0. Setup for Claude, Cursor, VS Code and GitHub Copilot: [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp).
 
 > [!TIP]
 > **Coding agents:** point your MCP client at the hosted server with an API key and your agent can search for, connect, verify and diagnose domains, with DNS, verification, and TLS handled.
@@ -166,8 +166,8 @@ Shapes are illustrative; exact schemas live in the [API reference](https://docs.
 | [connect-domain-for-ai-agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents) | Custom domains for AI agents: MCP setup for Claude, Cursor, VS Code and GitHub Copilot, the API flow, and agent-safe DNS security. |
 | [connect-domain-for-agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies) | Custom domains for agencies: client domains without registrar logins, white-label connection, drift monitoring, bulk operations. |
 | [awesome-custom-domains](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains) | The curated map of the whole space: managed services, DIY building blocks, protocols, and examples. |
-| [customdomain-sdk](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk) | The browser SDK `customdomain-js` and the React wrapper `@customdomain/react`, both 0.5.4 on npm. |
-| [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp) | The hosted MCP server at `https://mcp.customdomain.ai/mcp`, version 0.6.0, twenty tools: setup for Claude, Cursor, VS Code, GitHub Copilot and ChatGPT. |
+| [customdomain-sdk](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk) | The browser SDK `customdomain-js` and the React wrapper `@customdomain/react`, both on npm. |
+| [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp) | The hosted MCP server at `https://mcp.customdomain.ai/mcp`, version 0.6.0: setup for Claude, Cursor, VS Code, GitHub Copilot and ChatGPT. |
 | [custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks) | DNS and SSL health checks for GitHub Pages custom domains: a GitHub Action you can add to a workflow today, and a GitHub App whose service is deployed but which is not registered on GitHub yet. |
 | [customdomain-brand-kit](https://github.com/CUSTOM-DOMAIN-APP/customdomain-brand-kit) | The brand reference: name rule, oak mark, stone palette, and type. |
 | custom-domains | The product itself: control plane, TLS-terminating edge, dashboard. Private. |
@@ -187,7 +187,7 @@ With one-click provider authorization, about 30 seconds from typing the domain t
 Yes. SPF, DKIM, DMARC, MX, and return-path records are written through the same connect flow. See [connect-domain-for-email-platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms).
 
 **Is there a free trial?**
-Yes. Every self-serve plan starts with a 14 day free trial, from $10 a month (Starter, 10 domain connections a year), and a new workspace connects its first ten domains without a card. Every plan includes the Connect DNS engine, the widget and SDK, the REST API and webhooks, DNS drift detection, and the MCP server. The reverse-proxy edge and the SSL management API start on the Growth plan. See [pricing](https://customdomain.ai/pricing).
+Yes. Every self-serve plan starts with a 14 day free trial, from $10 a month (Starter, 10 domain connections a year). Every plan includes the Connect DNS engine, the widget and SDK, the REST API and webhooks, and the MCP server. The reverse-proxy edge and the SSL management API start on the Growth plan. See [pricing](https://customdomain.ai/pricing).
 
 ---
 
