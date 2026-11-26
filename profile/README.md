@@ -37,7 +37,7 @@ in at their provider, and it goes live on your product with HTTPS.
 
 | | Step | You do |
 |:-:|---|---|
-| **1** | **Try the widget** | Open it in the Sandbox with a made up domain. No card |
+| **1** | **Try the widget** | Open it in the Sandbox with a made up domain |
 | **2** | **Add it to your product** | Your server mints a short lived token; the widget opens with it |
 | **3** | **Point domains at your app** | Tell us where your users' domains should go |
 | **4** | **Your user connects** | They type their domain, sign in at their provider, done |
@@ -61,16 +61,12 @@ in at their provider, and it goes live on your product with HTTPS.
       <br><b>On every screen</b>
     </td>
     <td width="50%" align="center">
-      <img src="https://raw.githubusercontent.com/CUSTOM-DOMAIN-APP/.github/HEAD/profile/images/widget-providers.png" alt="The continue button in each provider's colour" width="420">
-      <br><b>Knows the provider</b>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" align="center">
       <img src="https://raw.githubusercontent.com/CUSTOM-DOMAIN-APP/.github/HEAD/profile/images/widget-languages.png" alt="The widget in several languages" width="420">
       <br><b>Speaks your user's language</b>
     </td>
-    <td width="50%" align="center">
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CUSTOM-DOMAIN-APP/.github/HEAD/profile/images/widget-card-dark.png">
         <img src="https://raw.githubusercontent.com/CUSTOM-DOMAIN-APP/.github/HEAD/profile/images/widget-card-light.png" alt="The widget in your brand" width="260">
@@ -105,7 +101,7 @@ in at their provider, and it goes live on your product with HTTPS.
 | **$10** a month | **$149** a month | **$649** a month | Talk to us | Talk to us |
 | 10 domains a year | 600 a year | 600 a year, then metered | 12,000 a year | 12,000 a year, then metered |
 
-<p align="center"><a href="https://customdomain.ai/pricing">See every plan</a> · The Sandbox is free</p>
+<p align="center"><a href="https://customdomain.ai/pricing">See every plan</a></p>
 
 ## Repositories
 
