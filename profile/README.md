@@ -1,210 +1,135 @@
+<!-- The CUSTOM-DOMAIN-APP organization front page (.github/profile/README.md). Source: docs/product/github-org/ in
+     the product repo; scripts/github-org-tidy.sh copies this file and the pictures beside it. Public text: say what a
+     customer needs, never how the product works inside. -->
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CUSTOM-DOMAIN-APP/.github/HEAD/profile/images/customdomain-mark-dark.png">
+    <img src="https://raw.githubusercontent.com/CUSTOM-DOMAIN-APP/.github/HEAD/profile/images/customdomain-mark.png" alt="CustomDomain" width="72">
+  </picture>
+</p>
+
 <h1 align="center">CustomDomain™</h1>
 
-<p align="center"><strong>One-click custom domains for SaaS. Automatic DNS, domain verification, and SSL/TLS on your users' own domains.</strong></p>
+<p align="center"><b>Your users connect their own domain, inside your product.</b></p>
+
+<p align="center">
+  <a href="https://app.customdomain.ai/signup"><img alt="Start building" src="https://img.shields.io/badge/Start%20building-1c1917?style=for-the-badge"></a>
+  <a href="https://docs.customdomain.ai/docs/getting-started/quickstart"><img alt="Quickstart" src="https://img.shields.io/badge/Quickstart-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logoColor=1c1917"></a>
+  <a href="https://www.npmjs.com/package/customdomain-js"><img alt="npm" src="https://img.shields.io/badge/customdomain--js-1c1917?style=for-the-badge&logo=npm&logoColor=white"></a>
+  <a href="https://www.producthunt.com/products/custom-domain"><img alt="Product Hunt" src="https://img.shields.io/badge/Product%20Hunt-1c1917?style=for-the-badge&logo=producthunt&logoColor=white"></a>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CUSTOM-DOMAIN-APP/.github/HEAD/profile/images/widget-hero-dark.png">
+    <img src="https://raw.githubusercontent.com/CUSTOM-DOMAIN-APP/.github/HEAD/profile/images/widget-hero-light.png" alt="The CustomDomain widget open inside a product, asking the user to connect their domain" width="900">
+  </picture>
+</p>
+
+## Who it is for
+
+Software companies whose customers bring a domain: website and store builders, link and booking pages, creator tools,
+portals and any product that gives each customer a site. You add one widget; your customer types their domain, signs
+in at their provider, and it goes live on your product with HTTPS.
+
+## How it works
+
+| | Step | You do |
+|:-:|---|---|
+| **1** | **Try the widget** | Open it in the Sandbox with a made up domain |
+| **2** | **Add it to your product** | Your server mints a short lived token; the widget opens with it |
+| **3** | **Point domains at your app** | Tell us where your users' domains should go |
+| **4** | **Your user connects** | They type their domain, sign in at their provider, done |
+
+## The widget
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CUSTOM-DOMAIN-APP/.github/HEAD/profile/images/widget-flow-dark.png">
+    <img src="https://raw.githubusercontent.com/CUSTOM-DOMAIN-APP/.github/HEAD/profile/images/widget-flow-light.png" alt="The five steps of the widget: domain, connect, review, working, done" width="900">
+  </picture>
+</p>
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CUSTOM-DOMAIN-APP/.github/HEAD/profile/images/widget-phone-dark.png">
+        <img src="https://raw.githubusercontent.com/CUSTOM-DOMAIN-APP/.github/HEAD/profile/images/widget-phone-light.png" alt="The widget on a phone" width="420">
+      </picture>
+      <br><b>On every screen</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="https://raw.githubusercontent.com/CUSTOM-DOMAIN-APP/.github/HEAD/profile/images/widget-languages.png" alt="The widget in several languages" width="420">
+      <br><b>Speaks your user's language</b>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CUSTOM-DOMAIN-APP/.github/HEAD/profile/images/widget-card-dark.png">
+        <img src="https://raw.githubusercontent.com/CUSTOM-DOMAIN-APP/.github/HEAD/profile/images/widget-card-light.png" alt="The widget in your brand" width="260">
+      </picture>
+      <br><b>Wears your brand</b>
+    </td>
+  </tr>
+</table>
+
+## Works with the providers your users already have
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CUSTOM-DOMAIN-APP/.github/HEAD/profile/images/providers-strip-dark.png">
+    <img src="https://raw.githubusercontent.com/CUSTOM-DOMAIN-APP/.github/HEAD/profile/images/providers-strip.png" alt="Domain providers the widget supports" width="820">
+  </picture>
+</p>
+
+## Install
+
+| | | |
+|:-:|---|---|
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/npm/e7e5e4"><img src="https://cdn.simpleicons.org/npm/1c1917" width="22" alt="npm"></picture> | **Widget** | `npm install customdomain-js` |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/react/e7e5e4"><img src="https://cdn.simpleicons.org/react/1c1917" width="22" alt="React"></picture> | **React** | `npm install @customdomain/react` |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/homebrew/e7e5e4"><img src="https://cdn.simpleicons.org/homebrew/1c1917" width="22" alt="Homebrew"></picture> | **Command line** | `brew install custom-domain-app/tap/customdomain` |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/claude/e7e5e4"><img src="https://cdn.simpleicons.org/claude/1c1917" width="22" alt="Claude"></picture> | **AI coding tools** | `https://mcp.customdomain.ai/mcp` |
+
+## Pricing
+
+| Starter | Startup | Growth | Premium | Enterprise |
+|:-:|:-:|:-:|:-:|:-:|
+| **$10** a month | **$149** a month | **$649** a month | Talk to us | Talk to us |
+| 10 domains a year | 600 a year | 600 a year, then metered | 12,000 a year | 12,000 a year, then metered |
+
+<p align="center"><a href="https://customdomain.ai/pricing">See every plan</a></p>
+
+## Repositories
+
+| | Repository | |
+|:-:|---|---|
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/npm/e7e5e4"><img src="https://cdn.simpleicons.org/npm/1c1917" width="20" alt=""></picture> | [customdomain-sdk](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk) | The widget for JavaScript, TypeScript and React |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/gnubash/e7e5e4"><img src="https://cdn.simpleicons.org/gnubash/1c1917" width="20" alt=""></picture> | [customdomain-cli](https://github.com/CUSTOM-DOMAIN-APP/customdomain-cli) | The command line |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/homebrew/e7e5e4"><img src="https://cdn.simpleicons.org/homebrew/1c1917" width="20" alt=""></picture> | [homebrew-tap](https://github.com/CUSTOM-DOMAIN-APP/homebrew-tap) | Install the command line with Homebrew |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/claude/e7e5e4"><img src="https://cdn.simpleicons.org/claude/1c1917" width="20" alt=""></picture> | [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp) | Build your integration from an AI coding tool |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/readthedocs/e7e5e4"><img src="https://cdn.simpleicons.org/readthedocs/1c1917" width="20" alt=""></picture> | [docs](https://github.com/CUSTOM-DOMAIN-APP/docs) | Source of docs.customdomain.ai |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/github/e7e5e4"><img src="https://cdn.simpleicons.org/github/1c1917" width="20" alt=""></picture> | [custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks) | Free checks for a GitHub Pages domain |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/awesomelists/e7e5e4"><img src="https://cdn.simpleicons.org/awesomelists/1c1917" width="20" alt=""></picture> | [awesome-custom-domains](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains) | A curated list about custom domains |
+
+## Links
 
 <p align="center">
   <a href="https://customdomain.ai">Website</a> ·
   <a href="https://docs.customdomain.ai/docs">Docs</a> ·
-  <a href="https://customdomain.ai/custom-domain-api">REST API</a> ·
-  <a href="https://customdomain.ai/mcp-server">MCP Server</a> ·
-  <a href="https://customdomain.ai/connect-domain-widget">Widget</a> ·
-  <a href="https://app.customdomain.ai/signup"><strong>Get started free</strong></a>
+  <a href="https://docs.customdomain.ai/docs/api-reference">API reference</a> ·
+  <a href="https://docs.customdomain.ai/docs/changelog">Changelog</a> ·
+  <a href="https://status.customdomain.ai">Status</a> ·
+  <a href="https://www.npmjs.com/package/customdomain-js">npm</a> ·
+  <a href="https://www.producthunt.com/products/custom-domain">Product Hunt</a>
 </p>
 
 <p align="center">
-  <a href="https://docs.customdomain.ai/docs"><img alt="docs" src="https://img.shields.io/badge/docs-docs.customdomain.ai-1c1917?style=flat"></a>
-  <a href="https://customdomain.ai/mcp-server"><img alt="mcp" src="https://img.shields.io/badge/mcp-mcp.customdomain.ai-1c1917?style=flat"></a>
-  <a href="https://trust.customdomain.ai"><img alt="trust center" src="https://img.shields.io/badge/trust-trust.customdomain.ai-1c1917?style=flat"></a>
-  <a href="https://customdomain.ai/pricing"><img alt="pricing" src="https://img.shields.io/badge/pricing-14--day%20free%20trial-1c1917?style=flat"></a>
+  Help: <a href="mailto:connect@customdomain.ai">connect@customdomain.ai</a> ·
+  Security: <a href="mailto:security@customdomain.ai">security@customdomain.ai</a>, please never in a public issue
 </p>
 
----
-
-**CustomDomain™** lets a platform's users connect a domain they already own in one click. It detects the user's DNS provider, writes the records automatically, verifies them against public DNS, and issues and renews TLS certificates at a managed edge. Many DNS and registrar providers configure automatically, and the rest use a guided manual flow with automatic verification. A domain connected through provider authorization is typically **live with HTTPS in about 30 seconds**.
-
-## See it work
-
-The connect flow, run on a real domain: provider detected, records written and verified, certificate issued.
-
-![The CustomDomain™ connect flow: a real domain going live in about 30 seconds](../assets/connect-flow-demo.gif)
-
-<table>
-<tr>
-<td width="50%" align="center">
-
-**Your user types their domain**
-
-<img src="../assets/app-connect-domain.jpg" alt="Connecting a custom domain in the CustomDomain™ dashboard" width="100%">
-
-</td>
-<td width="50%" align="center">
-
-**Live with HTTPS, seconds later**
-
-<img src="../assets/app-domain-live.jpg" alt="A connected custom domain serving HTTPS traffic" width="100%">
-
-</td>
-</tr>
-</table>
-
-## Who this is for
-
-<table>
-<tr>
-<td align="center" width="25%">
-
-**🧱 Website builders**
-
-Your users publish sites and want their own domain on them.
-
-[Custom domains for website builders](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders)
-
-</td>
-<td align="center" width="25%">
-
-**✉️ Email platforms**
-
-Sending domains with SPF, DKIM, and DMARC written automatically.
-
-[Custom sending domains for email platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms)
-
-</td>
-<td align="center" width="25%">
-
-**🤖 AI agents**
-
-Agents that provision apps need real domains: search, connect and verify them, over MCP or API.
-
-[Custom domains for AI agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents)
-
-</td>
-<td align="center" width="25%">
-
-**🏢 Agencies**
-
-Client domains under your brand, without collecting registrar logins.
-
-[Custom domains for agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies)
-
-</td>
-</tr>
-</table>
-
-Also: **e-commerce platforms** (a storefront per merchant domain), **creator tools** (a domain per creator), and any **multi-tenant SaaS** where tenants deserve their own name in the address bar. Start at [custom domains for SaaS](https://customdomain.ai/custom-domains-for-saas).
-
-## DNS and registrar providers
-
-One connect flow across the entire provider landscape: one-click authorization where providers support it, API tokens where they offer them, and a guided manual path with automatic verification everywhere else. No user ever hits a dead end.
-
-<a href="https://customdomain.ai/one-click-dns-setup"><img src="../assets/provider-logos.png" alt="The supported DNS and registrar providers wall on customdomain.ai" width="100%"></a>
-
-| Connection method | User effort | Typical time to live |
-|---|---|---|
-| One-click provider authorization | One click, no credentials shared | About 30 seconds |
-| Scoped API token | Paste one scoped token | Minutes |
-| Guided manual + automatic verification | Copy the exact records shown | Minutes, cache-dependent |
-
-## For developers and AI agents
-
-**MCP server:** `https://mcp.customdomain.ai/mcp` (streamable HTTP), the official CustomDomain™ server, listed in the MCP registry as `ai.customdomain/mcp`, server version 0.6.0. Setup for Claude, Cursor, VS Code and GitHub Copilot: [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp).
-
-> [!TIP]
-> **Coding agents:** point your MCP client at the hosted server with an API key and your agent can search for, connect, verify and diagnose domains, with DNS, verification, and TLS handled.
-
-```bash
-claude mcp add --transport http customdomain https://mcp.customdomain.ai/mcp \
-  --header "Authorization: Bearer $CUSTOMDOMAIN_API_KEY"
-```
-
-```json
-{
-  "mcpServers": {
-    "customdomain": {
-      "type": "http",
-      "url": "https://mcp.customdomain.ai/mcp",
-      "headers": { "Authorization": "Bearer cd_live_YOUR_KEY" }
-    }
-  }
-}
-```
-
-<details>
-<summary><strong>Connect a domain via the REST API</strong></summary>
-
-<br>
-
-```bash
-# 1. Create a connection for your user's domain (the application comes from the key)
-curl -X POST https://api.customdomain.ai/v1/connections \
-  -H "Authorization: Bearer $API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"domain": "app.customer.com"}'
-
-# 2. Start one-click provider authorization (fallbacks: token or guided manual).
-#    return_origin is required and must be on your allowlist.
-curl -X POST https://api.customdomain.ai/v1/connections/<ID>/oauth:start \
-  -H "Authorization: Bearer $API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"return_origin": "https://app.yourplatform.com"}'
-
-# 3. Poll until live: records written, verified in public DNS, TLS issued
-curl https://api.customdomain.ai/v1/connections/<ID> \
-  -H "Authorization: Bearer $API_KEY"
-```
-
-Shapes are illustrative; exact schemas live in the [API reference](https://docs.customdomain.ai/docs/api-reference). The API also covers DNS records, TLS lifecycle, monitoring, webhooks, and registrar search and purchase. Agent index: [llms.txt](https://docs.customdomain.ai/docs/llms.txt).
-
-</details>
-
-## Repositories
-
-| Repository | What you'll find |
-|---|---|
-| [docs](https://github.com/CUSTOM-DOMAIN-APP/docs) | The product documentation source of truth, rendered at [docs.customdomain.ai](https://docs.customdomain.ai/docs). Questions welcome in [Discussions](https://github.com/CUSTOM-DOMAIN-APP/docs/discussions). |
-| [connect-domain-for-website-builders](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders) | Custom domains for website builders: records, verification, TLS at tenant scale, connect-flow UX, and Next.js on Vercel, Caddy and Cloudflare for SaaS compared. |
-| [connect-domain-for-email-platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms) | Custom sending domains for email platforms: SPF, DKIM, DMARC and return-path records for Amazon SES, SendGrid, Postmark and Resend, and automating all of it. |
-| [connect-domain-for-ai-agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents) | Custom domains for AI agents: MCP setup for Claude, Cursor, VS Code and GitHub Copilot, the API flow, and agent-safe DNS security. |
-| [connect-domain-for-agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies) | Custom domains for agencies: client domains without registrar logins, white-label connection, drift monitoring, bulk operations. |
-| [awesome-custom-domains](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains) | The curated map of the whole space: managed services, DIY building blocks, protocols, and examples. |
-| [customdomain-sdk](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk) | The browser SDK `customdomain-js` and the React wrapper `@customdomain/react`, both on npm. |
-| [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp) | The hosted MCP server at `https://mcp.customdomain.ai/mcp`, version 0.6.0: setup for Claude, Cursor, VS Code, GitHub Copilot and ChatGPT. |
-| [custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks) | DNS and SSL health checks for GitHub Pages custom domains: a GitHub Action you can add to a workflow today, and a GitHub App whose service is deployed but which is not registered on GitHub yet. |
-| [customdomain-brand-kit](https://github.com/CUSTOM-DOMAIN-APP/customdomain-brand-kit) | The brand reference: name rule, oak mark, stone palette, and type. |
-| custom-domains | The product itself: control plane, TLS-terminating edge, dashboard. Private. |
-
-## Common questions
-
-**How do I let my users connect their own domain?**
-Embed the [connect widget](https://customdomain.ai/connect-domain-widget) or call the [REST API](https://customdomain.ai/custom-domain-api). CustomDomain™ handles provider detection, DNS, verification, certificates, and serving.
-
-**What is bring your own domain (BYOD)?**
-Letting each customer run your product on a domain they own, like `app.acme.com`, instead of a shared subdomain. [Full definition](https://customdomain.ai/glossary/bring-your-own-domain), and [custom domain vs subdomain](https://customdomain.ai/glossary/custom-domain-vs-subdomain) if you're weighing the tradeoffs.
-
-**How fast can a customer domain go live?**
-With one-click provider authorization, about 30 seconds from typing the domain to serving HTTPS. Guided manual setups depend on the customer applying records; verification is detected automatically once they do.
-
-**Does this work for email domains?**
-Yes. SPF, DKIM, DMARC, MX, and return-path records are written through the same connect flow. See [connect-domain-for-email-platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms).
-
-**Is there a free trial?**
-Yes. Every self-serve plan starts with a 14 day free trial, from $10 a month (Starter, 10 domain connections a year). Every plan includes the Connect DNS engine, the widget and SDK, the REST API and webhooks, and the MCP server. The reverse-proxy edge and the SSL management API start on the Growth plan. See [pricing](https://customdomain.ai/pricing).
-
----
-
-## Run a domain on GitHub Pages? Watch it with custom-domain-checks
-
-**[custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks)** runs DNS and SSL health checks on the custom domain of a GitHub Pages site: DNS resolution, CNAME or apex target correctness, domain verification (takeover protection), CAA compatibility, certificate expiry, and HTTPS enforcement. Add it to a workflow as a GitHub Action today and it annotates every problem and fails the job on one. The GitHub App version posts a **Domain health** check on every push and opens a tracking issue when something breaks; its service is deployed, but the App is not registered on GitHub yet, so it cannot be installed from GitHub today. The source is open and free to run yourself.
-
----
-
-<p align="center">
-  <a href="https://app.customdomain.ai/signup"><strong>Connect your first domain free →</strong></a>
-</p>
-
-<p align="center">
-  <sub>Docs: <a href="https://docs.customdomain.ai/docs">docs.customdomain.ai</a> · Questions: <a href="https://github.com/CUSTOM-DOMAIN-APP/docs/discussions">Discussions</a> · Status: <a href="https://status.customdomain.ai">status.customdomain.ai</a> · Account and billing: connect@customdomain.ai · Security: security@customdomain.ai (<a href="https://app.customdomain.ai/security">policy</a>) · Security posture and sub-processors: <a href="https://trust.customdomain.ai">trust.customdomain.ai</a> · <a href="https://customdomain.ai/book">Book a call</a></sub>
-</p>
-
-<p align="center">
-  <sub>CustomDomain™ is a product of EverJust Company.</sub>
-</p>
+<p align="center"><sub>CustomDomain™ is a product of EverJust Company.</sub></p>
