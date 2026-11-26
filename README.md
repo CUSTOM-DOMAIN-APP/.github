@@ -116,8 +116,8 @@ If your product has tenants, and your tenants have brands, this is for you.
 |---|---|---|
 | **Website builders** | Every published site wants its own name in the address bar, at tenant scale. | [connect-domain-for-website-builders](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders) |
 | **Email platforms** | Sending domains need SPF, DKIM, DMARC and return-path written correctly the first time. | [connect-domain-for-email-platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms) |
-| **AI agents** | An agent that ships a site needs a real domain: search it, buy it, connect it, without a human in the loop. | [connect-domain-for-ai-agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents) |
-| **Agencies** | Client domains connected under your own brand, without collecting anyone's registrar login. | [connect-domain-for-agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies) |
+| **AI agents** | An agent that ships a site needs a real domain: search it, buy it, connect it, without a human in the loop. | [Custom domains for AI agents](https://customdomain.ai/for/ai-agents) |
+| **Agencies** | Client domains connected under your own brand, without collecting anyone's registrar login. | [Custom domains for agencies](https://customdomain.ai/for/agencies-white-label) |
 
 It also fits e-commerce platforms giving each merchant a storefront domain, creator tools
 giving each creator a domain, and any multi-tenant SaaS where a shared subdomain is the thing
@@ -241,12 +241,9 @@ The organization's repositories, one product. Public unless noted.
 | [`awesome-custom-domains`](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains) | Markdown | The curated map of the category: managed services, DIY building blocks, protocols, examples |
 | [`connect-domain-for-website-builders`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders) | Markdown | Custom domains for website builders: records, verification, TLS at tenant scale, connect-flow UX, Vercel, Caddy and Cloudflare for SaaS compared |
 | [`connect-domain-for-email-platforms`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms) | Markdown | Custom sending domains for email platforms: SPF, DKIM, DMARC, return-path for SES, SendGrid, Postmark and Resend |
-| [`connect-domain-for-ai-agents`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents) | Markdown | Custom domains for AI agents: MCP setup for Claude, Cursor, VS Code and Copilot, the API flow, agent-safe DNS security |
-| [`connect-domain-for-agencies`](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies) | Markdown | Use-case guide: fleet-scale client domains, white-label connection, drift monitoring |
 | [`customdomain-brand-kit`](https://github.com/CUSTOM-DOMAIN-APP/customdomain-brand-kit) | Markdown | The brand reference: name rule, oak mark, stone palette and type (`IDENTITY.md`); the asset files are not committed yet |
 | [`.github`](https://github.com/CUSTOM-DOMAIN-APP/.github) | Markdown | This repository |
 | `custom-domains` | Go, TypeScript | **Private.** The product monorepo: Go control plane and TLS-terminating edge, Next.js console, widget, MCP service |
-| `customdomain-site` | TypeScript | **Private.** The marketing site at customdomain.ai (Next.js, HeroUI, Tailwind) |
 | `dashboard-custom-domain` | TypeScript | **Private.** The internal marketing engine |
 | `CD-APPENDIX` | Markdown | **Private.** Product profile, architecture notes and diligence material |
 
@@ -421,8 +418,6 @@ Questions and ideas belong in
 - [custom-domain-checks](https://github.com/CUSTOM-DOMAIN-APP/custom-domain-checks): DNS and SSL health checks for GitHub Pages custom domains, as a GitHub Action and a GitHub App (not registered on GitHub yet)
 - [awesome-custom-domains](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains): the curated list of the category, including the alternatives to this product
 - [customdomain-brand-kit](https://github.com/CUSTOM-DOMAIN-APP/customdomain-brand-kit): the name rule, mark, palette and type
-- [connect-domain-for-ai-agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents): custom domains for AI agents, the field guide
-- [connect-domain-for-agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies): custom domains for agencies, the field guide
 - [connect-domain-for-email-platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms): custom sending domains for email platforms, the field guide
 - [connect-domain-for-website-builders](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders): custom domains for website builders, the field guide
 

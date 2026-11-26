@@ -120,16 +120,6 @@ apply_repo connect-domain-for-email-platforms "https://docs.customdomain.ai/docs
   custom-domains sending-domain email email-deliverability email-authentication spf dkim dmarc mx-records return-path \
   dns amazon-ses sendgrid postmark resend transactional-email saas customdomain
 
-apply_repo connect-domain-for-ai-agents "https://customdomain.ai/for/ai-agents" \
-  "Custom domains for AI agents: give an agent a real domain through a hosted MCP server and REST API that search for a domain, connect it to an app and issue HTTPS, with setup for Claude, Cursor, VS Code and GitHub Copilot. A CustomDomain™ field guide." \
-  ai-agents agentic-ai mcp mcp-server model-context-protocol claude cursor vscode github-copilot custom-domains \
-  custom-domain domains dns dns-automation rest-api ssl tls customdomain
-
-apply_repo connect-domain-for-agencies "https://customdomain.ai/for/agencies-white-label" \
-  "Custom domains for agencies: connect client domains to the sites you host under your own brand, without collecting registrar logins, with DNS, ownership verification and SSL handled. A CustomDomain™ field guide." \
-  agency agencies client-domains custom-domains custom-domain white-label reseller dns dns-automation domain-verification \
-  domain-management ssl tls godaddy cloudflare saas customdomain
-
 apply_repo customdomain-brand-kit "https://customdomain.ai/brand" \
   "CustomDomain™ brand kit: the name rule, the oak mark, the stone color tokens and the type behind customdomain.ai, for anyone writing or designing for the product." \
   brand-guidelines brand-kit brand-identity design-system design-tokens logo typography color-palette customdomain
@@ -149,5 +139,3 @@ apply_repo .github "https://customdomain.ai" \
 #
 # gh repo rename custom-domains-for-website-builders --repo "$ORG/connect-domain-for-website-builders" --yes
 # gh repo rename custom-sending-domains-for-email-platforms --repo "$ORG/connect-domain-for-email-platforms" --yes
-# gh repo rename custom-domains-for-ai-agents --repo "$ORG/connect-domain-for-ai-agents" --yes
-# gh repo rename custom-domains-for-agencies --repo "$ORG/connect-domain-for-agencies" --yes
