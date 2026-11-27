@@ -75,7 +75,7 @@ Sending domains with SPF, DKIM, and DMARC written automatically.
 
 Agents that provision apps need real domains: search, connect and verify them, over MCP or API.
 
-[Custom domains for AI agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents)
+[Custom domains for AI agents](https://customdomain.ai/for/ai-agents)
 
 </td>
 <td align="center" width="25%">
@@ -84,7 +84,7 @@ Agents that provision apps need real domains: search, connect and verify them, o
 
 Client domains under your brand, without collecting registrar logins.
 
-[Custom domains for agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies)
+[Custom domains for agencies](https://customdomain.ai/for/agencies-white-label)
 
 </td>
 </tr>
@@ -163,8 +163,6 @@ Shapes are illustrative; exact schemas live in the [API reference](https://docs.
 | [docs](https://github.com/CUSTOM-DOMAIN-APP/docs) | The product documentation source of truth, rendered at [docs.customdomain.ai](https://docs.customdomain.ai/docs). Questions welcome in [Discussions](https://github.com/CUSTOM-DOMAIN-APP/docs/discussions). |
 | [connect-domain-for-website-builders](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-website-builders) | Custom domains for website builders: records, verification, TLS at tenant scale, connect-flow UX, and Next.js on Vercel, Caddy and Cloudflare for SaaS compared. |
 | [connect-domain-for-email-platforms](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-email-platforms) | Custom sending domains for email platforms: SPF, DKIM, DMARC and return-path records for Amazon SES, SendGrid, Postmark and Resend, and automating all of it. |
-| [connect-domain-for-ai-agents](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-ai-agents) | Custom domains for AI agents: MCP setup for Claude, Cursor, VS Code and GitHub Copilot, the API flow, and agent-safe DNS security. |
-| [connect-domain-for-agencies](https://github.com/CUSTOM-DOMAIN-APP/connect-domain-for-agencies) | Custom domains for agencies: client domains without registrar logins, white-label connection, drift monitoring, bulk operations. |
 | [awesome-custom-domains](https://github.com/CUSTOM-DOMAIN-APP/awesome-custom-domains) | The curated map of the whole space: managed services, DIY building blocks, protocols, and examples. |
 | [customdomain-sdk](https://github.com/CUSTOM-DOMAIN-APP/customdomain-sdk) | The browser SDK `customdomain-js` and the React wrapper `@customdomain/react`, both on npm. |
 | [customdomain-mcp](https://github.com/CUSTOM-DOMAIN-APP/customdomain-mcp) | The hosted MCP server at `https://mcp.customdomain.ai/mcp`, version 0.6.0: setup for Claude, Cursor, VS Code, GitHub Copilot and ChatGPT. |
